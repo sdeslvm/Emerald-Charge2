@@ -6,8 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FAD891A52EEBAA9E004DCA0E /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FAD891A42EEBAA9E004DCA0E /* FirebaseCore */; };
+		FAD891A72EEBAA9E004DCA0E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FAD891A62EEBAA9E004DCA0E /* FirebaseDatabase */; };
+		FAD891A92EEBAA9E004DCA0E /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = FAD891A82EEBAA9E004DCA0E /* FirebaseInstallations */; };
+		FAD891AB2EEBAA9E004DCA0E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FAD891AA2EEBAA9E004DCA0E /* FirebaseMessaging */; };
+		FAD891AE2EEBABB9004DCA0E /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = FAD891AD2EEBABB9004DCA0E /* AppsFlyerLib */; };
+		FAD892212EEBB670004DCA0E /* AppInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAD8921D2EEBB670004DCA0E /* AppInfo.plist */; };
+		FAEA63502EF261410033A6AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAEA634F2EF261410033A6AD /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		FAD891862EEB9B54004DCA0E /* ZMTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD8921D2EEBB670004DCA0E /* AppInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppInfo.plist; sourceTree = "<group>"; };
+		FAEA634F2EF261410033A6AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +35,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD891AB2EEBAA9E004DCA0E /* FirebaseMessaging in Frameworks */,
+				FAD891AE2EEBABB9004DCA0E /* AppsFlyerLib in Frameworks */,
+				FAD891A92EEBAA9E004DCA0E /* FirebaseInstallations in Frameworks */,
+				FAD891A72EEBAA9E004DCA0E /* FirebaseDatabase in Frameworks */,
+				FAD891A52EEBAA9E004DCA0E /* FirebaseCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +49,7 @@
 		FAD8917D2EEB9B54004DCA0E = {
 			isa = PBXGroup;
 			children = (
+				FAD8921F2EEBB670004DCA0E /* Config */,
 				FAD891882EEB9B54004DCA0E /* ZMTemplate */,
 				FAD891872EEB9B54004DCA0E /* Products */,
 			);
@@ -43,6 +61,15 @@
 				FAD891862EEB9B54004DCA0E /* ZMTemplate.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FAD8921F2EEBB670004DCA0E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				FAD8921D2EEBB670004DCA0E /* AppInfo.plist */,
+				FAEA634F2EF261410033A6AD /* GoogleService-Info.plist */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,6 +92,11 @@
 			);
 			name = ZMTemplate;
 			packageProductDependencies = (
+				FAD891A42EEBAA9E004DCA0E /* FirebaseCore */,
+				FAD891A62EEBAA9E004DCA0E /* FirebaseDatabase */,
+				FAD891A82EEBAA9E004DCA0E /* FirebaseInstallations */,
+				FAD891AA2EEBAA9E004DCA0E /* FirebaseMessaging */,
+				FAD891AD2EEBABB9004DCA0E /* AppsFlyerLib */,
 			);
 			productName = ZMTemplate;
 			productReference = FAD891862EEB9B54004DCA0E /* ZMTemplate.app */;
@@ -94,6 +126,10 @@
 			);
 			mainGroup = FAD8917D2EEB9B54004DCA0E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FAD891A32EEBAA9E004DCA0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FAD891AC2EEBABB9004DCA0E /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FAD891872EEB9B54004DCA0E /* Products */;
 			projectDirPath = "";
@@ -109,6 +145,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD892212EEBB670004DCA0E /* AppInfo.plist in Resources */,
+				FAEA63502EF261410033A6AD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,29 +287,38 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ZMTemplate/ZMTemplate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Config/AppInfo.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Emerald Charge";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.template.zm.ZMTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emeraldcharge.play;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -280,29 +327,38 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ZMTemplate/ZMTemplate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Config/AppInfo.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Emerald Charge";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.template.zm.ZMTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emeraldcharge.play;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -328,6 +384,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAD891A32EEBAA9E004DCA0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+		FAD891AC2EEBABB9004DCA0E /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.17.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAD891A42EEBAA9E004DCA0E /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD891A32EEBAA9E004DCA0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		FAD891A62EEBAA9E004DCA0E /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD891A32EEBAA9E004DCA0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		FAD891A82EEBAA9E004DCA0E /* FirebaseInstallations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD891A32EEBAA9E004DCA0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseInstallations;
+		};
+		FAD891AA2EEBAA9E004DCA0E /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD891A32EEBAA9E004DCA0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		FAD891AD2EEBABB9004DCA0E /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD891AC2EEBABB9004DCA0E /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FAD8917E2EEB9B54004DCA0E /* Project object */;
 }
